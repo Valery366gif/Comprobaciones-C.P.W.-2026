@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a sample HTML document.">
+    <meta name="keywords" content="Escuela de musica, HTML, sample">
+    <meta name="author" content="Valery Shanay Mora Acevedo">
+    <title>Escuela de Música</title>
+</head>
+<body>
+    <h1>The Music School</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+     <p>
+          <label for="campo-nombre">Nombre completo:</label>
+          <input type="text" id="campo-nombre" name="nombre_usuario" minlength="3" maxlength="40" required>
+        </p>
+
+        <p>
+          <label for="campo-correo">Correo electrónico:</label>
+          <input type="email" id="campo-correo" name="correo_usuario" required>
+        </p>
+
+        <p>
+          <label for="campo-telefono">Teléfono de contacto (8 dígitos):</label>
+          <input type="tel" id="campo-telefono" name="telefono_usuario" pattern="[0-9]{8}" title="Ingrese exactamente 8 dígitos numéricos sin espacios ni guiones" required>
+        </p>
+
+        <p>
+          <label for="campo-clave">Contraseña para cuenta de la plataforma:</label>
+          <input type="password" id="campo-clave" name="clave_acceso" required>
+        </p>
+      </fieldset>
+
+      <!-- Grupo 2: Detalles de la Solicitud -->
+      <fieldset>
+        <legend>Detalles de la Solicitud</legend>
+
+        <p>
+          <label for="campo-fecha">Fecha estimada para la visita </label>
+          <input type="date" id="campo-fecha" name="fecha_taller">
+        </p>
+
+
+        <p>
+          <label for="campo-mensaje">Describa sus intereses o solicitudes para el cruso (máximo 50 caracteres):</label><br>
+          <textarea id="campo-mensaje" name="mensaje_consulta" rows="4" cols="45" maxlength="50"></textarea>
+        </p>
+
+      </fieldset>
+      <fieldset>
+        <legend>Cursos</legend>
+        <p>
+          <input type="checkbox" id="curso1" name="curso1">
+          <label for="curso1">Curso de Guitarra</label>
+        </p>
+        
+        <p>
+          <input type="checkbox" id="curso2" name="curso2">
+          <label for="curso2">Curso de Piano</label>
+        </p>
+       
+        <p>
+          <input type="checkbox" id="curso3" name="curso3">
+          <label for="curso3">Curso de Violín</label>
+            
+        </p>
+        
+        <p>
+          <input type="checkbox" id="curso4" name="curso4">
+          <label for="curso4">Curso de Canto</label>
+        </p>
+       
+        <p>
+            <input type="checkbox" id="curso5" name="curso5">
+            <label for="curso5">Curso de Batería</label>
+        </p>
+
+
+    
+      </fieldset>
+
+      <!-- Grupo 3: Confirmación -->
+      <fieldset>
+        <legend>Confirmación</legend>
+
+        <p>
+          <input type="checkbox" id="campo-terminos" name="acepta_terminos" required>
+          <label for="campo-terminos">Acepto los términos del servicio.</label>
+        </p>
+
+        <button type="submit">Enviar Solicitud</button>
+        <button type="reset">Limpiar Formulario</button>
+      </fieldset>
+
+    </form>
+  </main>
+
+
+  <p><a href="index.html">Regresar a la página de inicio</a></p>
+
+  <!-- Pie de Página -->
+  <footer id="pie-pagina">
+    <address>
+      <p>Consultas sobre talleres: <a href="mailto:info@themusicschool.or">info@themusicschool.or</a></p>
+    </address>
+    <p><small>&copy; 2026 The Music School. Todos los derechos reservados.</small></p>
+  </footer>
+
+
+
+
+</body>
+</html>
