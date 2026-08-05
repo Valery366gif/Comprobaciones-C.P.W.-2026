@@ -18,87 +18,123 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-     <p>
-          <label for="campo-nombre">Nombre completo:</label>
-          <input type="text" id="campo-nombre" name="nombre_usuario" minlength="3" maxlength="40" required>
-        </p>
-
-        <p>
-          <label for="campo-correo">Correo electrónico:</label>
-          <input type="email" id="campo-correo" name="correo_usuario" required>
-        </p>
-
-        <p>
-          <label for="campo-telefono">Teléfono de contacto (8 dígitos):</label>
-          <input type="tel" id="campo-telefono" name="telefono_usuario" pattern="[0-9]{8}" title="Ingrese exactamente 8 dígitos numéricos sin espacios ni guiones" required>
-        </p>
-
-        <p>
-          <label for="campo-clave">Contraseña para cuenta de la plataforma:</label>
-          <input type="password" id="campo-clave" name="clave_acceso" required>
-        </p>
      
+    <main id="contenido">
 
-      <!-- Grupo 2: Detalles de la Solicitud -->
-      <fieldset>
-        <legend>Detalles de la Solicitud</legend>
+    <article>
+      <h2>Formulario de matrícula</h2>
 
-        <p>
-          <label for="campo-fecha">Fecha estimada para la visita </label>
-          <input type="date" id="campo-fecha" name="fecha_taller">
-        </p>
+      <p>
+        Complete los datos para inscribirse en una sesión de refuerzo.
+        Los campos marcados con asterisco (*) son obligatorios.
+      </p>
 
+      <form action="#" method="post">
 
-        <p>
-          <label for="campo-mensaje">Describa sus intereses o solicitudes para el cruso (máximo 50 caracteres):</label><br>
-          <textarea id="campo-mensaje" name="mensaje_consulta" rows="4" cols="45" maxlength="50"></textarea>
-        </p>
+        <!--  GRUPO 1: DATOS PERSONALES -->
+        <fieldset>
+          <legend>Datos personales</legend>
 
-      </fieldset>
-      <fieldset>
-        <legend>Cursos</legend>
-        <p>
-          <input type="checkbox" id="curso1" name="curso1">
-          <label for="curso1">Curso de Guitarra</label>
-        </p>
+          <p>
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre"
+                   required minlength="3" maxlength="60"
+                   placeholder="Steffany Mora Espinoza">
+          </p>
+
+          <p>
+            <label for="cedula">Número de identificación *</label>
+            <input type="text" id="cedula" name="cedula"
+                   required pattern="[0-9]{9}"
+                   title="Nueve dígitos, sin guiones ni espacios"
+                   placeholder="120200998">
+          </p>
+
+          <p>
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo"
+                   required
+                   placeholder="steffany.mora@ejemplo.com">
+            <small>Se usará para confirmar la matrícula.</small>
+          </p>
+
+          <p>
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono"
+                   required pattern="[0-9]{8}"
+                   title="Ocho dígitos, sin espacios ni guiones"
+                   placeholder="88888888">
+          </p>
+
+          <p>
+            <label for="clave">Contraseña de acceso *</label>
+            <input type="password" id="clave" name="clave"
+                   required minlength="5">
+            <small>Mínimo cinco caracteres.</small>
+          </p>
+        </fieldset>
+
+              <!-- Grupo 2: Detalles de la Solicitud -->
+         <fieldset>
+           <legend>Detalles de la Solicitud</legend>
+
+          <p>
+            <label for="campo-fecha">Fecha estimada para la visita </label>
+            <input type="date" id="campo-fecha" name="fecha_taller">
+          </p>
+
         
-        <p>
-          <input type="checkbox" id="curso2" name="curso2">
-          <label for="curso2">Curso de Piano</label>
-        </p>
        
+
+          <p>
+            <label for="unidad">Cursos disponibles</label>
+            <select id="unidad" name="unidad">
+              <option value="">Seleccione una opción</option>
+              <option value="1">Avanzado &mdash; Piano</option>
+              <option value="2">Avanzado &mdash; Guitarra</option>
+              <option value="3">Avanzado &mdash; Canto</option>
+              <option value="4">Avanzado &mdash; Violin</option>
+              <option value="5">Avanzado &mdash; Bateria</option>
+            </select>
+          </p>
+
+      
+           <fieldset>
+            <legend>Intereses</legend>
+
+            <textarea id="comentarios" name="comentarios"
+                      rows="4" maxlength="50"
+                      placeholder="Escriba sus intereses por el curso que desea"></textarea>
+            <small>Máximo 50 caracteres.</small>
+          </p>
+        </fieldset>
+
+        <!-- GRUPO 3: CONFIRMACIÓN -->
+        <fieldset>
+          <legend>Confirmación</legend>
+
+          <p>
+            <input type="checkbox" id="acepto" name="acepto" required>
+            <label for="acepto">
+              Acepto que me contacten por los medios indicados *
+            </label>
+          </p>
+        </fieldset>
+
         <p>
-          <input type="checkbox" id="curso3" name="curso3">
-          <label for="curso3">Curso de Violín</label>
-            
+          <button type="submit">Enviar matrícula</button>
+          <button type="reset">Limpiar formulario</button>
         </p>
-        
-        <p>
-          <input type="checkbox" id="curso4" name="curso4">
-          <label for="curso4">Curso de Canto</label>
-        </p>
-       
-        <p>
-            <input type="checkbox" id="curso5" name="curso5">
-            <label for="curso5">Curso de Batería</label>
-        </p>
+      </form>
+    </article>
 
-
-    
-      </fieldset>
-
-      <!-- Grupo 3: Confirmación -->
-      <fieldset>
-        <legend>Confirmación</legend>
-
-        <p>
-          <input type="checkbox" id="campo-terminos" name="acepta_terminos" required>
-          <label for="campo-terminos">Acepto los términos del servicio.</label>
-        </p>
-
-        <button type="submit">Enviar Solicitud</button>
-        <button type="reset">Limpiar Formulario</button>
-      </fieldset>
+    <aside>
+      <h2>Antes de enviar</h2>
+      <p>
+        Revise el <a href="horario.html#calendario">calendario</a> para
+        confirmar la disponibilidad de la fecha elegida.
+      </p>
+    </aside>
 
     
   
