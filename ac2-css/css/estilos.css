@@ -98,7 +98,7 @@ blockquote {
     margin: 24px 0;
 }
 
-/* --- HEADER Y MENÚ FLOTANTE --- */
+/* --- HEADER --- */
 #cabecera{
     display: flex;
     justify-content: space-between;
@@ -113,6 +113,7 @@ blockquote {
     padding: 16px 35px;
     z-index: 100;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
 }
 
 .hero{
@@ -157,7 +158,7 @@ header nav a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header nav a:hover {/*hover del menu*/
+header nav a:hover {
     color: #0c0d0d;
     background-color: #B47F5A;
     border-color: #c19c67;
@@ -166,7 +167,7 @@ header nav a:hover {/*hover del menu*/
 }
 
 /* --- BOTONEs --- */
-.boton, .boton-secundario {
+.boton, boton-principal {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -200,19 +201,67 @@ header nav a:hover {/*hover del menu*/
 }
 
 
+.boton-secundario {
+    background: linear-gradient(135deg, #e07a5f 0%, #604035 100%);
+    box-shadow: 0 6px 18px rgba(91, 36, 20, 0.25);
+}
+
+.boton-secundario:hover {
+    background: linear-gradient(135deg, #e07a5f 0%, #604035 100%);
+    box-shadow: 0 12px 25px rgba(206, 143, 126, 0.4);
+}
+
+/* --- tarjetas--- */
+.tarjeta {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 106, 79, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: aparecer 0.8s ease-out;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(45, 106, 79, 0.12);
+    border-color: rgba(82, 183, 136, 0.3);
+}
+
+
+.historia {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 106, 79, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: aparecer 0.8s ease-out;
+}
+
+.historia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(45, 106, 79, 0.12);
+    border-color: rgba(82, 183, 136, 0.3);
+}
+.panel-aviso{
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 106, 79, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: aparecer 0.8s ease-out;
+}
+.panel-aviso:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(45, 106, 79, 0.12);
+    border-color: rgba(82, 183, 136, 0.3);
+}
 
 
 
-
-
-
-
-
-
-
-
-
-/* --- formulario bordes redondos--- */
+/* --- formulario--- */
 fieldset {
     padding: 24px;
     margin-bottom: 24px;
@@ -221,3 +270,151 @@ fieldset {
     background-color: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
+
+legend {
+    padding: 4px 14px;
+    font-weight: 700;
+    color: #000000;
+    background-color: #b4805a93;
+    border-radius: 20px;
+    font-size: 0.95rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #752F17;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fcfdfe;
+    transition: all 0.3s ease;
+}
+
+/* Animación del foco en los campos */
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #6D1E08;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(82, 183, 136, 0.18);
+    transform: translateY(-2px);
+}
+
+/* Validación suave con color */
+form input:invalid:not(:placeholder-shown) {
+    border-color: #e63946;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+}
+
+form input:valid:not(:placeholder-shown) {
+    border-color: #B47F5A;
+    box-shadow: 0 0 0 3px rgba(146, 175, 172, 0.12);
+}
+
+/* --- TABLAS MODERNAS --- */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #B47F5A;
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tbody tr {
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7faf7;
+}
+
+tbody tr:hover {
+    background-color: #e8f5e9;
+}
+
+/*seccion de catagorias y glosario*/
+.categorias{
+    
+    margin: 0 auto;
+    padding: 25px
+
+}
+
+
+.glosario {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 106, 79, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: aparecer 0.8s ease-out;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 2px solid #d8f3dc;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+#glosario dd{
+    margin-left: 20px;
+    margin-bottom: 8px;
+    
+}
+.glosario{
+    margin-left: 20px;
+    margin-bottom: 8px;
+    margin: 0 auto;
+    padding: 25px
+ 
+}
+
+
+footer {
+    background: linear-gradient(135deg, #816860 0%, #752F17 100%);
+    color: #f1f1f1;
+    padding: 5px;
+    margin-top: 40px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
