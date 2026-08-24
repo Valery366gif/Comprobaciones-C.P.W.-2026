@@ -1,0 +1,201 @@
+/*este es el ccs del Rincon de las letras*/
+
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+    color: #233329;
+    background-color: #f4f7f4;
+    padding-top: 170px;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+/* --- ENCABEZADOS Y TEXTO --- */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color:#B47F5A;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+}
+
+h2, h3 {
+    color: #51342c;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+main p {
+    max-width: 70ch;
+}
+
+main a {
+    color: #2d6a4f;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de línea animada debajo de los enlaces */
+main a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+/*hover de lo botones*/
+main a:hover {
+    color: #B47F5A;
+}
+
+main a:hover::after {
+    width: 100%;
+}
+
+blockquote {
+    font-style: italic;
+    color: #000000;
+    background: linear-gradient(135deg, #bf998c 0%, #B47F5A 100%);
+    border-left: 5px solid #000000;
+    padding: 16px 20px;
+    border-radius: 26px 0;
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.05);
+    margin: 24px 0;
+}
+
+/* --- HEADER Y MENÚ FLOTANTE --- */
+#cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(rgba(18, 38, 28, 0.65), rgba(212, 224, 218, 0.65)), url(../recursos/fondo1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 16px 35px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero{
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 18px 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.rejilla-servicios{
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 18px 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 12px;
+}
+
+/* Botones del menú de navegación */
+header nav a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px;
+    color: #000000;
+    border-radius: 30px;
+    background: rgba(169, 18, 18, 0.08);
+    border: 1px solid rgba(39, 130, 167, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header nav a:hover {/*hover del menu*/
+    color: #0c0d0d;
+    background-color: #B47F5A;
+    border-color: #c19c67;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- EFECTOS DE BOTONES PRINCIPALES --- */
+.boton, .boton-secundario {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #752F17 0%, #6D1E08 100%);
+    color: #ffffff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brillito que cruza el botón al pasar el mouse */
+.boton::before, .boton-secundario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.25), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
+    
+}
