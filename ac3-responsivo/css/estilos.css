@@ -45,6 +45,8 @@ body {
   line-height: 1.65;
   color: var(--tinta);
   background-color: var(--crema);
+  overflow-x: hidden;
+  
 }
 
 h1, h2, h3 {
