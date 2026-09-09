@@ -366,6 +366,11 @@ img {
 .tabla tbody tr:nth-child(even) { background-color: var(--crema); }
 .tabla tbody tr:hover           { background-color: var(--crema-alt); }
 
+.tabla-contenedor, 
+.seccion {
+  width: 100%;
+}
+
 .tabla tfoot td {
   background-color: var(--crema-alt);
   font-style: italic;
