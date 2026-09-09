@@ -15,7 +15,9 @@
   box-sizing: border-box;
 }
 
-
+ html{
+  font-size: 62.5%;
+ }
 /* ─── VARIABLES ──────────────────────────────────────────────────────── */
 :root {
   --verde:        #3D5A40;
