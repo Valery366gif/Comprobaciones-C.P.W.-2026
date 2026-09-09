@@ -45,7 +45,6 @@ body {
   line-height: 1.65;
   color: var(--tinta);
   background-color: var(--crema);
-  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -72,6 +71,7 @@ img {
 
 /* ─── CONTENEDORES ───────────────────────────────────────────────────── */
 .seccion {
+  width: 100%;
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
@@ -84,6 +84,7 @@ img {
 }
 
 .seccion-alterna > * {
+  width: 100%;
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
@@ -95,6 +96,7 @@ img {
 }
 
 .seccion-entrada {
+  width: 100%;
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
@@ -104,6 +106,7 @@ img {
 }
 
 .pagina-encabezado {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   padding: 80px 30px 48px;
@@ -114,14 +117,14 @@ img {
 .pagina-bajada   { color: var(--suave); font-size: 19px; }
 .subtitulo       { margin-top: 28px; margin-bottom: 10px; }
 
+
 /* ─── CABECERA ───────────────────────────────────────────────────────── */
 .cabecera {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 1180px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 18px 30px;
   background-color: var(--blanco);
@@ -175,7 +178,95 @@ img {
 
 .menu-enlace.activo { color: var(--terracota); }
 
+/* Ocultar el checkbox nativo */
+.menu-checkbox {
+  display: none;
+}
 
+/* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--verde);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ─── MEDIA QUERIES (RESPONSIVE) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cabecera {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px; /* Esto controla la separación exacta entre las líneas */
+  width: 34px;
+  height: 32px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--verde);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+  /* Ocultar la navegación por defecto en móviles */
+  .navegacion {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 1rem;
+    background-color: var(--blanco);
+    border-top: 1px solid var(--linea);
+  }
+
+  /* TRUCO CSS: Si el checkbox está marcado, muestra la navegación hermana */
+  .menu-checkbox:checked ~ .navegacion {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--crema-alt);
+  }
+
+  .menu-enlace {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+}
 
 
 /* ─── PORTADA ────────────────────────────────────────────────────────── */
@@ -185,7 +276,7 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 560px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,8 +288,8 @@ img {
   background-color: rgba(0, 0, 0, 0.48);
   padding: 48px;
   border-radius: var(--radio);
-  max-width: 720px;
   width: 100%;
+  max-width: 720px;
 }
 
 .portada-titulo {
@@ -217,10 +308,14 @@ img {
 .fila-propuestas {
   display: flex;
   gap: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tarjeta {
-  flex: 1 1 260px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 360px;
   background-color: var(--blanco);
   padding: 28px;
   border-radius: var(--radio);
@@ -253,7 +348,7 @@ img {
 /* ─── GALERÍA · Grid ─────────────────────────────────────────────────── */
 .rejilla-galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
 }
 
@@ -287,9 +382,9 @@ img {
 }
 
 
-
 /* ─── CITA ───────────────────────────────────────────────────────────── */
 .cita {
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
   padding: 44px;
@@ -313,9 +408,9 @@ img {
 }
 
 
-
 /* ─── ÍNDICE INTERNO ─────────────────────────────────────────────────── */
 .indice {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto 20px;
   padding: 0 30px;
@@ -325,9 +420,9 @@ img {
 
 .indice-lista {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 26px;
+  gap: 26px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .indice-lista a {
@@ -335,16 +430,15 @@ img {
   padding-bottom: 2px;
 }
 
-/* ─── TABLA ──────────────────────────────────────────────────────────── */
 
-.tabla-envoltorio {
+/* ─── TABLA ──────────────────────────────────────────────────────────── */
+.tabla-contenedor {
   width: 100%;
   overflow-x: auto;
 }
 
 .tabla {
   width: 100%;
-  min-width: 640px;
   border-collapse: collapse;
   background-color: var(--blanco);
   border-radius: var(--radio);
@@ -389,18 +483,19 @@ img {
 /* ─── DOS COLUMNAS · Flexbox ─────────────────────────────────────────── */
 .dos-columnas {
   display: flex;
-  flex-wrap: wrap;
   gap: 44px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.columna        { flex: 1 1 400px; }
-.columna-figura { flex: 1 1 400px; margin: 0; }
+.columna        { flex: 1; min-width: 280px; }
+.columna-figura { flex: 1; min-width: 280px; margin: 0; }
 
 .columna-figura img {
   width: 100%;
   border-radius: var(--radio);
   box-shadow: var(--sombra);
+  height: auto;
 }
 
 .figura-pie {
@@ -409,7 +504,6 @@ img {
   color: var(--suave);
   text-align: center;
   font-style: italic;
-
 }
 
 
@@ -453,10 +547,9 @@ img {
 }
 
 
-
-
 /* ─── FORMULARIO ─────────────────────────────────────────────────────── */
 .formulario {
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -537,6 +630,7 @@ img {
   gap: 14px;
   justify-content: flex-end;
   margin-bottom: 0;
+  flex-wrap: wrap;
 }
 
 
@@ -551,6 +645,7 @@ img {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.25s ease;
+  text-align: center;
 }
 
 .boton-principal {
@@ -585,15 +680,16 @@ img {
 }
 
 .pie-columnas {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   gap: 44px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.pie-bloque { flex: 1 1 260px; }
+.pie-bloque { flex: 1; min-width: 240px; }
 
 .pie-titulo {
   color: var(--blanco);
@@ -617,6 +713,7 @@ img {
 .pie-enlace:hover { border-bottom-color: var(--blanco); }
 
 .pie-creditos {
+  width: 100%;
   max-width: 1180px;
   margin: 44px auto 0;
   padding-top: 18px;
@@ -628,131 +725,88 @@ img {
 }
 
 
-
-
-/*tables*/
-
-@media (max-width: 900px) {
-
-  
-  h1 { font-size: 40px; }
-  h2 { font-size: 28px; }
-
-  
-  .seccion,
-  .pagina-encabezado {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  /*Se usa  en todo el ancho */
-  .seccion-entrada { max-width: 100%; }
-
-  /* Uusa todo el ancho disponible */
-  .portada { height: 460px; }
-  .portada-caja { padding: 32px; }
-
-  
-  .tarjeta { flex: 1 1 45%; }
-
- 
-  .rejilla-galeria {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  
-  .cita {
-    max-width: 100%;
-    padding: 32px;
-  }
-
- 
-  .pie { padding-top: 50px; }
-}
-
-
-/* Telfonos noviles*/
-@media (max-width: 600px) {
-
-  body { font-size: 16px; }
-
-  h1 { font-size: 32px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 19px; }
-
-
+/* ─── MEDIA QUERIES (RESPONSIVE) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Cabecera y menú desplegable en móviles */
   .cabecera {
-    justify-content: center;
-    text-align: center;
-    padding: 16px 20px;
+    flex-wrap: wrap;
+    padding: 1rem;
   }
 
-  .navegacion { width: 100%; justify-content: center; }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navegacion {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 1rem;
+    background-color: var(--blanco);
+    border-top: 1px solid var(--linea);
+  }
+
+  .navegacion.activo {
+    display: block;
+  }
 
   .menu {
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    gap: 0;
   }
 
-  .menu-enlace { padding: 8px 12px; }
+  .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--crema-alt);
+  }
 
+  .menu-enlace {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  /* Ajustes generales de textos y contenedores en móviles */
+  h1 { font-size: 38px; }
+  h2 { font-size: 28px; }
   
   .seccion,
-  .seccion-alterna > *,
   .pagina-encabezado,
   .indice {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
-  .seccion,
-  .pagina-encabezado {
-    padding-top: 44px;
-    padding-bottom: 44px;
+  .portada {
+    min-height: 420px;
+    padding: 20px;
   }
 
-  .portada { height: auto; padding: 60px 20px; }
-  .portada-caja { padding: 24px; }
-  .portada-titulo { font-size: 30px; }
-  .portada-bajada { font-size: 17px; }
-
- 
-  .fila-propuestas,
-  .dos-columnas,
-  .pie-columnas {
-    flex-direction: column;
+  .portada-caja {
+    padding: 24px;
   }
 
-  .tarjeta,
-  .columna,
-  .columna-figura,
-  .pie-bloque {
-    flex-basis: auto;
-    width: 100%;
+  .portada-titulo {
+    font-size: 32px;
   }
 
-  .rejilla-galeria { grid-template-columns: 1fr; }
+  .formulario {
+    padding: 0;
+  }
 
- 
-  .indice-lista { flex-direction: column; gap: 10px; }
+  .grupo {
+    padding: 16px;
+  }
 
-  
-  .cita { padding: 22px; }
-  .cita-texto { font-size: 19px; }
-
-  
-  .formulario { max-width: 100%; }
-  .grupo { padding: 18px; }
-
-  
   .fila-botones {
     flex-direction: column;
-    align-items: stretch;
   }
 
-  .boton { text-align: center; width: 100%; }
-
- 
-  .pie { padding-top: 40px; margin-top: 50px; }}
+  .boton {
+    width: 100%;
+  }
+}
